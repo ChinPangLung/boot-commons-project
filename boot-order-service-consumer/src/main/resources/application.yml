@@ -1,0 +1,16 @@
+server:
+  port: 8081
+dubbo:
+  application:
+    name: boot-order-service-consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  monitor:
+    protocol: registry
+#启动时检查 如果提供者服务不存在 check=true时  consumer启动时会报错 check=False时 consumer启动时不报错
+  consumer: #这里的配置是对全局有效
+    check: true
+#    接口调用响应时间 默认是1000毫秒
+    timeout: 1000
+#    接口响应超时 后重试次数 不包含第一次调用 注意：如果是幂等的话可以设置重试次数 如果非幂等的话 不能设置重试次数
+    retries: 2 #不建议设置为全局变量
