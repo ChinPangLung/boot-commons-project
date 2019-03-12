@@ -34,6 +34,11 @@
             <artifactId>boot-commons-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.lung.application</groupId>
+            <artifactId>boot-commons-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- Dubbo Spring Boot Starter -->
         <dependency>
