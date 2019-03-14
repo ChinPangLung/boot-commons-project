@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.alibaba.dubbo.config.annotation.Service;
 
 
-@Service//暴露服务 
+@Service//暴露服务
 @Component
 public class UserServiceImpl implements UserService {
 
