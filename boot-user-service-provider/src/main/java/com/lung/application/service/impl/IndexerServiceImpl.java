@@ -80,7 +80,7 @@ public class IndexerServiceImpl implements IndexerService {
     private List<Car> assembleTestData() {
         List<Car> cars = new ArrayList<>();
         for (int i = 0; i < 1000; i++) {
-            cars.add(new Car(RandomUtils.nextLong(1, 111111), RandomStringUtils.randomAscii(20),
+            cars.add(new Car(RandomUtils.nextLong(1, 211111), RandomStringUtils.randomAscii(20),
                     RandomStringUtils.randomAlphabetic(15), BigDecimal.valueOf(78000)));
         }
         return cars;
