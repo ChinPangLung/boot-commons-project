@@ -2,7 +2,7 @@ dubbo:
   application:
     name: boot-user-service-provider
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://182.254.183.22:2181
   protocol:
     name: dubbo
 #    dubbo的配置信息加载顺序是 -D > application.yml > dubbo.properties
