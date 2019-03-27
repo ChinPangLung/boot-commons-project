@@ -16,3 +16,13 @@ spring:
       cluster-nodes: 182.254.183.22:9300
       repositories:
         enabled: true
+apache:
+  rocketmq:
+    # 消费者的组名
+    consumer:
+      pushConsumer: PushConsumer
+    # 生产者的组名
+    producer:
+      producerGroup: Producer
+    # NameServer地址
+    namesrvAddr: 182.254.183.22:9876
