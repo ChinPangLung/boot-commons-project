@@ -13,7 +13,7 @@ spring:
   data:
     elasticsearch:
       cluster-name: my-application
-      cluster-nodes: 182.254.183.22:9300
+      cluster-nodes: 127.0.0.1:9300
       repositories:
         enabled: true
 apache:
