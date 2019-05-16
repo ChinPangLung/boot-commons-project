@@ -58,6 +58,8 @@
             <version>3.8.1</version>
         </dependency>
 
+
+        <!-- elasticsearch的依赖在model模块中-->
         <!-- <dependency>
              <groupId>org.springframework.boot</groupId>
              <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
