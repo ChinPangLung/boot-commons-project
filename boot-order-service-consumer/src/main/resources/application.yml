@@ -8,8 +8,8 @@ dubbo:
     qosAcceptForeignIp: false
   registry:
     address: zookeeper://182.254.183.22:2181
-  monitor:
-    protocol: registry
+#  monitor:
+#    protocol: registry
 #启动时检查 如果提供者服务不存在 check=true时  consumer启动时会报错 check=False时 consumer启动时不报错
   consumer: #这里的配置是对全局有效
     check: false
