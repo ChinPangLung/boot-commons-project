@@ -8,7 +8,7 @@ dubbo:
     address: zookeeper://182.254.183.22:2181
   protocol:
     name: dubbo
-#    dubbo的配置信息加载顺序是 -D > application.yml > dubbo.properties
+#    dubbo的配置信息加载顺序是 -D > application.yml > dubbo.properties 默认端口20880
     port: 20880
 #  monitor:
 #    protocol: registry
