@@ -7,7 +7,10 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
+/**
+ * 系统启动时输出容器的bean对象
+ */
+//@Component
 public class ManagerBeansName implements ApplicationContextAware {
 
     ApplicationContext applicationContext = null;

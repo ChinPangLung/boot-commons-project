@@ -15,7 +15,7 @@ spring:
       cluster-name: my-application
       cluster-nodes: 127.0.0.1:9300
       repositories:
-        enabled: true
+        enabled: true #开启本地存储
 apache:
   rocketmq:
     # 消费者的组名
