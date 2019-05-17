@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+boot-commons-interface/target/
+boot-commons-model/target/
+boot-commons-utils/target/
+boot-order-service-consumer/target/
+boot-user-service-provider/target/
