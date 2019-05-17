@@ -9,7 +9,7 @@ dubbo:
   protocol:
     name: dubbo
 #    dubbo的配置信息加载顺序是 -D > application.yml > dubbo.properties
-    port: 20882
+    port: 20880
 #  monitor:
 #    protocol: registry
 spring:
