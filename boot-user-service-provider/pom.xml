@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -69,6 +69,13 @@
             <artifactId>rocketmq-client</artifactId>
             <version>3.2.6</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.lung.application</groupId>
+            <artifactId>boot-commons-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
