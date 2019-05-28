@@ -5,6 +5,7 @@
 # IntelliJ project files
 .idea
 *.iml
+*.bak
 out
 gen
 boot-commons-interface/target/
