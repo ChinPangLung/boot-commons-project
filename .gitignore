@@ -11,8 +11,8 @@ gen
 boot-commons-interface/target/
 boot-commons-model/target/
 boot-commons-utils/target/
-boot-order-service-consumer/target/
-boot-user-service-provider/target/
+boot-order-service/target/
+boot-user-service/target/
 将删除 boot-user-service-provider/.attach_pid16576
 将删除 boot-user-service-provider/.attach_pid17104
 将删除 boot-user-service-provider/.attach_pid18031
