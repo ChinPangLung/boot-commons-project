@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lung.application</groupId>
-    <artifactId>boot-user-service-provider</artifactId>
+    <artifactId>boot-user-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>boot-user-service-provider</name>
+    <name>boot-user-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lung.application</groupId>
-    <artifactId>boot-order-service-consumer</artifactId>
+    <artifactId>boot-order-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>boot-order-service-consumer</name>
+    <name>boot-order-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
