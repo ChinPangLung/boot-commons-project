@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.lung.application.bean.UserAddress;
 import com.lung.application.service.OrderService;
-import com.lung.application.service.UserService;
+import com.lung.application.service.UserTestService;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -27,14 +27,14 @@ public class OrderServiceImpl implements OrderService {
      */
 //    @Reference(url = "127.0.0.1:20882")//dubbo直连
     @Reference //引用dubbo服务
-    UserService userService;
+    UserTestService userTestService;
 
     @Override
     public List<UserAddress> initOrder(String userId) {
         // TODO Auto-generated method stub
         System.out.println("用户id：" + userId);
         //1、查询用户的收货地址
-        List<UserAddress> addressList = userService.getUserAddressList(userId);
+        List<UserAddress> addressList = userTestService.getUserAddressList(userId);
         return addressList;
     }
 

@@ -3,15 +3,12 @@ package com.lung.application.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lung.application.service.UserService;
+import com.lung.application.service.UserTestService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.MethodConfig;
-import com.alibaba.dubbo.config.MonitorConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.ProviderConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
 
@@ -44,16 +41,16 @@ public class DubboConfig {
 	}
 	
 	/**
-	 *<dubbo:service interface="com.atguigu.gmall.service.UserService" 
+	 *<dubbo:service interface="com.atguigu.gmall.service.UserTestService"
 		ref="userServiceImpl01" timeout="1000" version="1.0.0">
 		<dubbo:method name="getUserAddressList" timeout="1000"></dubbo:method>
 	</dubbo:service>
 	 */
 	@Bean
-	public ServiceConfig<UserService> userServiceConfig(UserService userService){
-		ServiceConfig<UserService> serviceConfig = new ServiceConfig<>();
-		serviceConfig.setInterface(UserService.class);
-		serviceConfig.setRef(userService);
+	public ServiceConfig<UserTestService> userServiceConfig(UserTestService userTestService){
+		ServiceConfig<UserTestService> serviceConfig = new ServiceConfig<>();
+		serviceConfig.setInterface(UserTestService.class);
+		serviceConfig.setRef(userTestService);
 		serviceConfig.setVersion("1.0.0");
 		
 		//配置每一个method的信息

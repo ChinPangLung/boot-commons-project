@@ -17,7 +17,7 @@
 	<dubbo:protocol name="dubbo" port="20882"/>
 	
 	<!--&lt;!&ndash; 4、暴露服务   ref：指向服务的真正的实现对象 &ndash;&gt;-->
-	<!--<dubbo:service interface="com.lung.application.service.UserService"-->
+	<!--<dubbo:service interface="com.lung.application.service.UserTestServicevice"-->
 		<!--ref="userServiceImpl01" timeout="1000" version="1.0.0">-->
 		<!--<dubbo:method name="getUserAddressList" timeout="1000"/>-->
 	<!--</dubbo:service>-->
@@ -27,7 +27,7 @@
 	
 	
 	<!-- 服务的实现 -->
-	<!--<bean id="userServiceImpl01" class="com.lung.application.service.impl.UserServiceImpl"/>-->
+	<!--<bean id="userServiceImpl01" class="UserTestServiceImplImpl"/>-->
 	
 	
 	<!-- 连接监控中心 -->

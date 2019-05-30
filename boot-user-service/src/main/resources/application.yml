@@ -2,7 +2,7 @@ server:
   port: 8082
 dubbo:
   application:
-    name: boot-user-service-provider
+    name: boot-user-service
     qosEnable: false
     qosPort: 33333
     qosAcceptForeignIp: false
@@ -15,6 +15,9 @@ dubbo:
 #  monitor:
 #    protocol: registry
 spring:
+  jackson: # jackson时间格式化
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   data:
     elasticsearch:
       cluster-name: my-application
@@ -32,6 +35,37 @@ spring:
       max-idle: 10 # 连接池中的最大空闲连接
       min-idle: 0 # 连接池中的最小空闲连接
     time: 1000 # 连接超时时间（毫秒）
+  datasource: #数据库配置
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://182.254.183.22:3306/dsbdb?useUnicode=true$characterEncoding=utf-8
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 5
+      max-active: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      min-evictable-idle-time-millis: 30000
+      min-idle: 5
+      pool-prepared-statements: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 1 FROM DUAL
+mybatis-plus:
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+    map-underscore-to-camel-case: true
+  global-config:
+    db-column-underline: false
+    id-type: 0 #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    refresh-mapper: true
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.lung.application.model.entity
 
 rocketmq:
   #生产者配置
