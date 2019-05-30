@@ -8,6 +8,10 @@ dubbo:
     address: zookeeper://182.254.183.22:2181
 #  monitor:
 #    protocol: registry
+  protocol:
+    name: dubbo
+    #    dubbo的配置信息加载顺序是 -D > application.yml > dubbo.properties 默认端口20880
+    port: 20880
 #启动时检查 如果提供者服务不存在 check=true时  consumer启动时会报错 check=False时 consumer启动时不报错
   consumer: #这里的配置是对全局有效
     check: false
@@ -47,7 +51,7 @@ spring:
   datasource: #数据库配置
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://182.254.183.22:3306/dsbdb?useUnicode=true$characterEncoding=utf-8
+    url: jdbc:mysql://182.254.183.22:3306/account_db?useUnicode=true$characterEncoding=utf-8
     username: root
     driver-class-name: com.mysql.jdbc.Driver
     druid:
@@ -63,15 +67,15 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 60000
       validation-query: SELECT 1 FROM DUAL
-  mybatis-plus:
-    configuration:
-      cache-enabled: true
-      lazy-loading-enabled: true
-      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
-      map-underscore-to-camel-case: true
-    global-config:
-      db-column-underline: false
-      id-type: 0 #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
-      refresh-mapper: true
-    mapper-locations: classpath:/mapper/*Mapper.xml
-    typeAliasesPackage: com.lung.application.model.entity
+mybatis-plus:
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+    map-underscore-to-camel-case: true
+  global-config:
+    db-column-underline: false
+    id-type: 0 #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    refresh-mapper: true
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.lung.application.model.entity
