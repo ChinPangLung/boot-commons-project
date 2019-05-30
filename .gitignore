@@ -8,14 +8,4 @@
 *.bak
 out
 gen
-boot-commons-interface/target/
-boot-commons-model/target/
-boot-commons-utils/target/
-boot-order-service/target/
-boot-user-service/target/
-将删除 boot-user-service-provider/.attach_pid16576
-将删除 boot-user-service-provider/.attach_pid17104
-将删除 boot-user-service-provider/.attach_pid18031
-将删除 boot-user-service-provider/.attach_pid18262
-将删除 boot-user-service-provider/.attach_pid19799
-将删除 boot-user-service-provider/.attach_pid20099
+*/target
