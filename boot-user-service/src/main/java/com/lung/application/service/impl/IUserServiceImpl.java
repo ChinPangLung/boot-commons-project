@@ -30,7 +30,7 @@ public class IUserServiceImpl extends ServiceImpl<UserMapper, User> implements I
     public List<User> findByUserName(String name) {
 
         EntityWrapper entityWrapper = new EntityWrapper<User>();
-        entityWrapper.eq("name", name);
+        entityWrapper.like("name", name);
 
         List list = userMapper.selectList(entityWrapper);
 
