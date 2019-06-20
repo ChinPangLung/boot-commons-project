@@ -13,6 +13,8 @@
         <module>boot-commons-utils</module>
         <module>boot-commons-interface</module>
         <module>boot-commons-model</module>
+        <module>boot-order-service</module>
+        <module>boot-user-service</module>
     </modules>
 
 
