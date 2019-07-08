@@ -30,16 +30,6 @@ import javax.annotation.PostConstruct;
 @EnableScheduling //定时任务注解
 public class BootUserServiceApplication {
 
-    @Autowired
-    private UserLogProducer kafkaSender;
-    @PostConstruct
-    public void init(){
-        for (int i = 0; i < 10; i++) {
-            //调用消息发送类中的消息发送方法
-            kafkaSender.sendLog(String.valueOf(i));
-        }
-    }
-
     public static void main(String[] args) {
         System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(BootUserServiceApplication.class, args);
