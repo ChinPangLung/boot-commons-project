@@ -17,6 +17,14 @@ import java.util.Optional;
 @Slf4j
 public class UserLogConsumer {
 
+    /**
+     * 消息的消费处理端
+     *
+     * @param consumerRecord
+     * @return void
+     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @since 2019/7/8
+     */
     @KafkaListener(topics = {"userLog"})
     public void consumer(ConsumerRecord<?, ?> consumerRecord) {
         //判断是否为null
@@ -25,7 +33,7 @@ public class UserLogConsumer {
         if (kafkaMessage.isPresent()) {
             //得到Optional实例中的值
             Object message = kafkaMessage.get();
-            System.err.println("消费消息:"+message);
+            System.err.println("消费消息:" + message);
         }
     }
 }
