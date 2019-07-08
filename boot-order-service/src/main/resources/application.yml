@@ -49,7 +49,7 @@ spring:
     expose-spring-macro-helpers: true
 #    template-loader-path: classpath:/templates/
   datasource: #数据库配置
-    password: root
+    password: mysql123456
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://182.254.183.22:3306/account_db?useUnicode=true$characterEncoding=utf-8
     username: root
