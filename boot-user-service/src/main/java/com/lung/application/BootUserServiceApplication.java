@@ -1,12 +1,16 @@
 package com.lung.application;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
+import com.lung.application.kafka.producer.UserLogProducer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
+
+import javax.annotation.PostConstruct;
 
 /**
  * spingboot整合dubbo三种方式
@@ -25,6 +29,16 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 @SpringBootApplication
 @EnableScheduling //定时任务注解
 public class BootUserServiceApplication {
+
+    @Autowired
+    private UserLogProducer kafkaSender;
+    @PostConstruct
+    public void init(){
+        for (int i = 0; i < 10; i++) {
+            //调用消息发送类中的消息发送方法
+            kafkaSender.sendLog(String.valueOf(i));
+        }
+    }
 
     public static void main(String[] args) {
         System.setProperty("es.set.netty.runtime.available.processors", "false");
