@@ -14,9 +14,11 @@ import java.util.concurrent.TimeUnit;
  * Redis工具类
  * 直接用RedisTemplate操作Redis，需要很多行代码，因此直接封装好一个RedisUtils，这样写代码更方便点。
  * 这个RedisUtils交给Spring容器实例化，使用时直接注解注入
+ *
+ * @author longzhanpeng
  */
 @Component
-public class RedisUtil {
+public class RedisUtils {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
@@ -84,6 +86,7 @@ public class RedisUtil {
     }
 
     // ============================String=============================
+
     /**
      * 普通缓存获取
      *
@@ -162,6 +165,7 @@ public class RedisUtil {
     }
 
     // ================================Map=================================
+
     /**
      * HashGet
      *
@@ -307,6 +311,7 @@ public class RedisUtil {
     }
 
     // ============================set=============================
+
     /**
      * 根据key获取Set中的所有值
      *
@@ -568,4 +573,6 @@ public class RedisUtil {
             return 0;
         }
     }
+
+
 }
