@@ -1,6 +1,6 @@
 package com.lung.application.web.controller;
 
-import com.lung.application.utils.redis.RedisUtil;
+import com.lung.application.utils.redis.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +12,7 @@ import java.util.Map;
 public class RedisController {
 
     @Autowired
-    private RedisUtil redisUtil;
+    private RedisUtils redisUtil;
 
     @RequestMapping(value = "redis")
     public Map<String, Object> testRedis() {
