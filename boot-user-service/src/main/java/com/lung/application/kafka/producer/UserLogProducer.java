@@ -5,6 +5,7 @@ import com.lung.application.kafka.bean.UserLog;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 
@@ -29,8 +30,8 @@ public class UserLogProducer {
         try {
             ListenableFuture userLog1 = kafkaTemplate.send("userLog", JSON.toJSONString(userLog));
             log.info("<<<<<<<<<<<<<<" + userLog1.toString());
-            Object o = userLog1.get();
-            log.info("===============>" + o.toString());
+            SendResult<String,String> result = (SendResult<String, String>) userLog1.get();
+            log.info("===============>" + result.toString());
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
