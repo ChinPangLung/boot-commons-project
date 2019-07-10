@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.concurrent.ListenableFuture;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * 定义消息的发送者
@@ -23,6 +26,13 @@ public class UserLogProducer {
         UserLog userLog = new UserLog();
         userLog.setUserName("lzp").setUserId(userId).setState("0");
         log.info("发送用户日志数据：" + userLog.toString());
-        kafkaTemplate.send("userLog", JSON.toJSONString(userLog));
+        try {
+            ListenableFuture userLog1 = kafkaTemplate.send("userLog", JSON.toJSONString(userLog));
+            log.info("<<<<<<<<<<<<<<" + userLog1.toString());
+            Object o = userLog1.get();
+            log.info("===============>" + o.toString());
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }
