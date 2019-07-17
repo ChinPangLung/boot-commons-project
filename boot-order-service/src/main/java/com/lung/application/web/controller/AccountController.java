@@ -39,7 +39,7 @@ public class AccountController {
     @RequestMapping(value = "findaccount")
     public Map<String,Object> findAccountList(String name) {
 
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<>(0b10000);
         log.info("首先测试account接口本地调用==========");
         List<Account> accounts = accountService.selectList(new EntityWrapper<>());
         result.put("account", accounts);
