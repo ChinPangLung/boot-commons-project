@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * zk工具类
  *
- * @author longzhanpeng longzhanpeng@3vjia.com
+ * @author longzhanpeng chinpang9527@gmail.com
  * @since 2019-07-10 13:52
  */
 @Slf4j
@@ -24,7 +24,7 @@ public class ZKUtils implements Watcher {
      *
      * @param null
      * @return
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     private static final int SESSION_TIME_OUT = 2000;
@@ -36,7 +36,7 @@ public class ZKUtils implements Watcher {
      *
      * @param watchedEvent
      * @return void
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng
      * @since 2019/7/10
      */
     @Override
@@ -52,7 +52,7 @@ public class ZKUtils implements Watcher {
      *
      * @param host
      * @return void
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public void connectZookeeper(String host) throws IOException, InterruptedException {
@@ -67,7 +67,7 @@ public class ZKUtils implements Watcher {
      * @param path
      * @param data
      * @return java.lang.String
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public String createNode(String path, String data) throws KeeperException, InterruptedException {
@@ -79,7 +79,7 @@ public class ZKUtils implements Watcher {
      *
      * @param path
      * @return java.util.List<java.lang.String>
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public List<String> getChildren(String path) throws KeeperException, InterruptedException {
@@ -92,7 +92,7 @@ public class ZKUtils implements Watcher {
      *
      * @param path
      * @return java.lang.String
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public String getDate(String path) throws KeeperException, InterruptedException {
@@ -109,7 +109,7 @@ public class ZKUtils implements Watcher {
      * @param path
      * @param data
      * @return org.apache.zookeeper.data.Stat
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public Stat setData(String path, String data) throws KeeperException, InterruptedException {
@@ -122,7 +122,7 @@ public class ZKUtils implements Watcher {
      *
      * @param path
      * @return void
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public void deleteNode(String path) throws InterruptedException, KeeperException {
@@ -134,7 +134,7 @@ public class ZKUtils implements Watcher {
      *
      * @param path
      * @return java.lang.String
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public String getCTime(String path) throws KeeperException, InterruptedException {
@@ -147,7 +147,7 @@ public class ZKUtils implements Watcher {
      *
      * @param path
      * @return java.lang.Integer
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public Integer getChildrenNum(String path) throws KeeperException, InterruptedException {
@@ -159,7 +159,7 @@ public class ZKUtils implements Watcher {
      * 关闭连接
      *
      * @return void
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng chinpang9527@gmail.com
      * @since 2019/7/10
      */
     public void closeConnection() throws InterruptedException {

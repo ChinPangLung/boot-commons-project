@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 /**
  * BigDecimal
  *
- * @author longzhanpeng longzhanpeng@3vjia.com
+ * @author longzhanpeng chinpang9527@gmail.com
  * @since 2019-07-11 09:01
  */
 @Slf4j

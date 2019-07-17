@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * parallelStream
  *
- * @author longzhanpeng longzhanpeng@3vjia.com
+ * @author longzhanpeng chinpang9527@gmail.com
  * @since 2019-07-12 13:55
  */
 public class parallelStream {

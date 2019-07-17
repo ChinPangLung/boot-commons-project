@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Volatile
  *
- * @author longzhanpeng longzhanpeng@3vjia.com
+ * @author longzhanpeng chinpang9527@gmail.com
  * @since 2019-07-09 14:34
  */
 @Slf4j

@@ -43,7 +43,7 @@ public class RedisUtils {
      * @param requestId
      * @param expireTime
      * @return boolean
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng
      * @since 2019/7/9
      */
     public boolean tryGetDistributedLock(String lockKey, String requestId, int expireTime) {
@@ -64,7 +64,7 @@ public class RedisUtils {
      * @param lockKey
      * @param requestId
      * @return boolean
-     * @author longzhanpeng longzhanpeng@3vjia.com
+     * @author longzhanpeng
      * @since 2019/7/9
      */
     public boolean releaseDistributedLock(String lockKey, String requestId) {
