@@ -31,7 +31,7 @@ public class BootUserServiceApplication {
         SpringApplication.run(BootUserServiceApplication.class, args);
     }
 
-    @Bean
+//    @Bean
     public TaskScheduler taskScheduler() {
         ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
         //线程池大小

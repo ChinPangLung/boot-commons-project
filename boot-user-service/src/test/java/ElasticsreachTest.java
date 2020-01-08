@@ -1,3 +1,4 @@
+/*
 import com.lung.application.BootUserServiceApplication;
 import com.lung.application.elasticsearch.ArticleSearchRepository;
 import com.lung.application.es.Article;
@@ -12,13 +13,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Iterator;
 
+*/
 /**
  * @Title: ElasticsreachTest
  * @Author: lung
  * @Date: 19-3-12 下午1:49
  * @version: V1.0
  * @Description: Created with IntelliJ IDEA.
- **/
+ **//*
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BootUserServiceApplication.class)
 public class ElasticsreachTest {
@@ -66,3 +69,4 @@ public class ElasticsreachTest {
     }
 
 }
+*/

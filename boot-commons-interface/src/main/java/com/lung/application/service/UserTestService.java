@@ -17,6 +17,6 @@ public interface UserTestService {
 	 * @param userId
 	 * @return
 	 */
-	public List<UserAddress> getUserAddressList(String userId);
+	List<UserAddress> getUserAddressList(String userId);
 
 }

@@ -1,3 +1,4 @@
+/*
 package com.lung.application.utils;
 
 import org.elasticsearch.index.query.*;
@@ -32,3 +33,4 @@ public class ElasticSearchUtils {
     }
 
 }
+*/

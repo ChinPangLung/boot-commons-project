@@ -34,8 +34,7 @@ public class OrderServiceImpl implements OrderService {
         // TODO Auto-generated method stub
         System.out.println("用户id：" + userId);
         //1、查询用户的收货地址
-        List<UserAddress> addressList = userTestService.getUserAddressList(userId);
-        return addressList;
+        return userTestService.getUserAddressList(userId);
     }
 
 

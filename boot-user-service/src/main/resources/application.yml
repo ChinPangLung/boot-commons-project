@@ -8,7 +8,7 @@ dubbo:
     qosAcceptForeignIp: false
   registry:
     address: zookeeper://182.254.183.22:2181
-    # onitor:
+    # monitor:
     #    protocol: registry
   protocol:
     name: dubbo
@@ -22,21 +22,28 @@ dubbo:
     #    接口响应超时 后重试次数 不包含第一次调用 注意：如果是幂等的话可以设置重试次数 如果非幂等的话 不能设置重试次数
     retries: 2 #不建议设置为全局变量
 
+
 spring:
+  application:
+    name: boot-user-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: default
   jackson: # jackson时间格式化
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-  data:
-    elasticsearch:
-      cluster-name: my-application
-      cluster-nodes: 127.0.0.1:9300
-      repositories:
-        enabled: true #开启本地存储
+#  data:
+#    elasticsearch:
+#      cluster-name: my-application
+#      cluster-nodes: 127.0.0.1:9300
+#      repositories:
+#        enabled: true #开启本地存储
   redis:
     databases: 0 #reids 数据库索引
     host: 182.254.183.22
-    port: 6379
-    password: redis123 # Redis服务器连接密码（默认为空）
+    port: 7963
+    password: redis123456 # Redis服务器连接密码（默认为空）
     pool:
       max-active: 200 # 连接池最大连接数（使用负值表示没有限制）
       max-wait: 1 # 连接池最大阻塞等待时间（使用负值表示没有限制）
@@ -44,9 +51,9 @@ spring:
       min-idle: 0 # 连接池中的最小空闲连接
     time: 1000 # 连接超时时间（毫秒）
   datasource: #数据库配置
-    password: mysql123
+    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://182.254.183.22:3306/testdb?useUnicode=true$characterEncoding=utf-8
+    url: jdbc:mysql://182.254.183.22:3307/dataStudy?useSSL=false&serverTimezone=UTC
     username: root
     driver-class-name: com.mysql.jdbc.Driver
     druid:
@@ -74,3 +81,25 @@ mybatis-plus:
     refresh-mapper: true
   mapper-locations: classpath:/mapper/*Mapper.xml
   typeAliasesPackage: com.lung.application.model.entity
+
+rocketmq:
+  #生产者配置
+  producer:
+    groupName: "rocketmq-demo"
+    namesrvAddr: 182.254.183.22:9876
+    default: true
+    #消费者配置
+  consumer:
+    groupName: "rocketmq-demo"
+    namesrvAddr: 182.254.183.22:9876
+    default: false
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          alibaba:
+            seata:
+              web: debug
+    io:
+      seata: debug

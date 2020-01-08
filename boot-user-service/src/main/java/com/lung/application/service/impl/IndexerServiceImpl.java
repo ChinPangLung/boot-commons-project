@@ -1,3 +1,4 @@
+/*
 package com.lung.application.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
@@ -15,13 +16,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * @Title: IndexerService
  * @Author: lung
  * @Date: 19-3-14 下午1:47
  * @version: V1.0
  * @Description: Created with IntelliJ IDEA.
- **/
+ **//*
+
 @Service //dubbo的
 @Component
 public class IndexerServiceImpl implements IndexerService {
@@ -53,9 +56,11 @@ public class IndexerServiceImpl implements IndexerService {
                 indexQuery.setIndexName(CAR_INDEX_NAME);
                 indexQuery.setType(CAR_INDEX_TYPE);
                 queries.add(indexQuery);
-                /**
+                */
+/**
                  * 分批提交索引
-                 */
+                 *//*
+
                 if (counter % 500 == 0) {
                     elasticsearchTemplate.bulkIndex(queries);
                     queries.clear();
@@ -87,3 +92,4 @@ public class IndexerServiceImpl implements IndexerService {
     }
 
 }
+*/

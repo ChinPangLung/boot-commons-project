@@ -5,11 +5,13 @@ import com.lung.application.model.entity.Account;
 import com.lung.application.model.mapper.AccountMapper;
 import com.lung.application.service.IAccountService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author ChinPangLung
@@ -17,6 +19,16 @@ import org.springframework.stereotype.Component;
  */
 @Service
 @Component
+@Log4j2
 public class IAccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
 
+    @Override
+    public Account createAccount(Account account) {
+        boolean bool = insert(account);
+        if (bool) {
+            log.info("创建account账号信息成功:" + account.toString());
+        }
+        int i = 10 / 0;
+        return account;
+    }
 }
