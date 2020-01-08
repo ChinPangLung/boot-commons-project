@@ -1,3 +1,4 @@
+/*
 package com.lung.application.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
@@ -11,13 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+*/
 /**
  * @Title: IndexerController
  * @Author: lung
  * @Date: 19-3-14 下午2:40
  * @version: V1.0
  * @Description: Created with IntelliJ IDEA.
- **/
+ **//*
+
 @RestController
 public class IndexerController {
 
@@ -42,3 +45,4 @@ public class IndexerController {
         return JSON.toJSONString(list);
     }
 }
+*/

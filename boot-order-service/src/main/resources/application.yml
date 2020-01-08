@@ -21,6 +21,12 @@ dubbo:
     retries: 2 #不建议设置为全局变量
 
 spring:
+  application:
+    name: boot-order-service
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
   jackson: # jackson时间格式化
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -49,9 +55,9 @@ spring:
     expose-spring-macro-helpers: true
 #    template-loader-path: classpath:/templates/
   datasource: #数据库配置
-    password:
+    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://182.254.183.22:3306/account_db?useUnicode=true$characterEncoding=utf-8
+    url: jdbc:mysql://182.254.183.22:3307/dataStudy?useUnicode=true$characterEncoding=utf-8
     username: root
     driver-class-name: com.mysql.jdbc.Driver
     druid:
