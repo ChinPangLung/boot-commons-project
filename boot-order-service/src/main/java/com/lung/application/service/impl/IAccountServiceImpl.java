@@ -32,7 +32,7 @@ public class IAccountServiceImpl extends ServiceImpl<AccountMapper, Account> imp
         if (bool) {
             log.info("创建account账号信息成功:" + account.toString());
         }
-        int i = 10 / 0;
+//        int i = 10 / 0;
         return account;
     }
 }
