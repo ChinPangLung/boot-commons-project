@@ -8,6 +8,8 @@ import com.lung.application.model.entity.User;
 import com.lung.application.service.IAccountService;
 import com.lung.application.service.IUserService;
 import com.lung.application.utils.redis.RedisUtils;
+import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.math.BigDecimal;
+import java.util.*;
+
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 /**
  * <p>
@@ -44,11 +46,19 @@ public class UserController {
     private IAccountService accountService;
 
     @RequestMapping(value = "list")
+    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-demo-tx")
     public Map<String, Object> findAllUser() {
-        Map<String, Object> result = new HashMap<>();
+        LOGGER.info("user purchase begin ... xid: " + RootContext.getXID());
+        Map<String, Object> result = new HashMap<>(16);
         List<User> users = userService.selectList(new EntityWrapper<>());
         log.info("调用order-service的account接口=======");
         List<Account> accounts = accountService.selectList(new EntityWrapper<>());
+        Account account = new Account();
+        account.setBalance(new BigDecimal(1000));
+        account.setFreezeAmount(new BigDecimal(1000));
+        account.setUserId("100");
+        account.setCreateTime(new Date());
+        accountService.createAccount(account);
         result.put("user", users);
         result.put("account", accounts);
         return result;
