@@ -85,3 +85,16 @@ mybatis-plus:
     refresh-mapper: true
   mapper-locations: classpath:/mapper/*Mapper.xml
   typeAliasesPackage: com.lung.application.model.entity
+
+seata:
+  application-id: ${spring.application.name}
+  tx-service-group: seller_seata_group
+  service:
+    grouplist:
+      # seata seaver的 地址配置，此处可以集群配置是个数组
+      default: 182.254.183.22:8091
+    vgroup-mapping:
+      # key一定要与tx-service-group一致
+      seller_seata_group: default
+  enabled: true
+  enable-auto-data-source-proxy: false
