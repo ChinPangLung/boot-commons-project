@@ -45,22 +45,32 @@ public class UserController {
     @Reference
     private IAccountService accountService;
 
-    @RequestMapping(value = "list")
-    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-demo-tx")
-    public Map<String, Object> findAllUser() {
+    @RequestMapping(value = "create")
+    @GlobalTransactional(timeoutMills = 300000)
+    public Map<String, Object> create() {
         LOGGER.info("user purchase begin ... xid: " + RootContext.getXID());
         Map<String, Object> result = new HashMap<>(16);
-        List<User> users = userService.selectList(new EntityWrapper<>());
+        //写入一个user
+        User user = new User();
+        user.setAge(new Random().nextInt(100));
+        user.setCreateBy("system");
+        user.setCreateDate(new Date());
+        user.setDelFlag("1");
+        user.setName("test" + user.getAge());
+        user.setRemarks("备注");
+        user.setSex(1);
+        userService.insert(user);
+        List<User> users = userService.findByUserName(user.getName());
         log.info("调用order-service的account接口=======");
-        List<Account> accounts = accountService.selectList(new EntityWrapper<>());
         Account account = new Account();
         account.setBalance(new BigDecimal(1000));
         account.setFreezeAmount(new BigDecimal(1000));
         account.setUserId("100");
         account.setCreateTime(new Date());
         accountService.createAccount(account);
+        List<Account> accounts = accountService.selectList(new EntityWrapper<>());
         result.put("user", users);
-        result.put("account", accounts);
+        result.put("accounts", accounts);
         return result;
     }
 

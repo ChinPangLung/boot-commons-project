@@ -18,7 +18,7 @@ dubbo:
   consumer: #这里的配置是对全局有效
     check: false
     #    接口调用响应时间 默认是1000毫秒
-#    timeout: 1000
+    #    timeout: 1000
     #    接口响应超时 后重试次数 不包含第一次调用 注意：如果是幂等的话可以设置重试次数 如果非幂等的话 不能设置重试次数
 #    retries: 2 #不建议设置为全局变量
 
@@ -29,12 +29,12 @@ spring:
   jackson: # jackson时间格式化
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-#  data:
-#    elasticsearch:
-#      cluster-name: my-application
-#      cluster-nodes: 127.0.0.1:9300
-#      repositories:
-#        enabled: true #开启本地存储
+  #  data:
+  #    elasticsearch:
+  #      cluster-name: my-application
+  #      cluster-nodes: 127.0.0.1:9300
+  #      repositories:
+  #        enabled: true #开启本地存储
   redis:
     databases: 0 #reids 数据库索引
     host: 182.254.183.22
@@ -103,13 +103,13 @@ logging:
       seata: info
 seata:
   application-id: ${spring.application.name}
-  tx-service-group: seller_seata_group
+  tx-service-group: ${spring.application.name}-group
   service:
     grouplist:
       # seata seaver的 地址配置，此处可以集群配置是个数组
       default: 182.254.183.22:8091
     vgroup-mapping:
       # key一定要与tx-service-group一致
-      seller_seata_group: default
+      boot-user-service-group: default
   enabled: true
   enable-auto-data-source-proxy: false
