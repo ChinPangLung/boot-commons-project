@@ -26,10 +26,6 @@ dubbo:
 spring:
   application:
     name: boot-user-service
-  cloud:
-    alibaba:
-      seata:
-        tx-service-group: my_test_tx_group
   jackson: # jackson时间格式化
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
