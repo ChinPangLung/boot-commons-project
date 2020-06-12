@@ -1,14 +1,13 @@
 package com.lung.application.service.impl;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.alibaba.dubbo.config.annotation.Service;
 import com.lung.application.bean.UserAddress;
 import com.lung.application.service.UserTestService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import java.util.Arrays;
+import java.util.List;
 
 
 @Service//暴露服务

@@ -10,18 +10,13 @@ import com.lung.application.service.IUserService;
 import com.lung.application.utils.redis.RedisUtils;
 import io.seata.core.context.RootContext;
 import io.seata.spring.annotation.GlobalTransactional;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.util.*;
-
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 /**
  * <p>
@@ -48,7 +43,7 @@ public class UserController {
     @RequestMapping(value = "create")
     @GlobalTransactional(timeoutMills = 300000)
     public Map<String, Object> create() {
-        LOGGER.info("user purchase begin ... xid: " + RootContext.getXID());
+        log.info("user purchase begin ... xid: " + RootContext.getXID());
         Map<String, Object> result = new HashMap<>(16);
         //写入一个user
         User user = new User();

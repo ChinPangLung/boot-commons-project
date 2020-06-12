@@ -1,14 +1,13 @@
 package com.lung.application.service.impl;
 
-import java.util.Arrays;
-import java.util.List;
-
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.lung.application.bean.UserAddress;
 import com.lung.application.service.OrderService;
 import com.lung.application.service.UserTestService;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.config.annotation.Reference;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 1、将服务提供者注册到注册中心（暴露服务）

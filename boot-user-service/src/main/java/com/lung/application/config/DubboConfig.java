@@ -1,16 +1,11 @@
 package com.lung.application.config;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.alibaba.dubbo.config.*;
 import com.lung.application.service.UserTestService;
 import org.springframework.context.annotation.Bean;
 
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.MethodConfig;
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import com.alibaba.dubbo.config.ServiceConfig;
+import java.util.ArrayList;
+import java.util.List;
 
 //@Configuration
 public class DubboConfig {

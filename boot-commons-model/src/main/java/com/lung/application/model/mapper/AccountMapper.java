@@ -1,7 +1,7 @@
 package com.lung.application.model.mapper;
 
-import com.lung.application.model.entity.Account;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.lung.application.model.entity.Account;
 
 /**
  * <p>
