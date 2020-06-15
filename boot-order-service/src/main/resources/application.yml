@@ -55,7 +55,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://182.254.183.22:3307/dataStudy?useUnicode=true$characterEncoding=utf-8
     username: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name:  com.mysql.cj.jdbc.Driver
     druid:
       initial-size: 5
       max-active: 20

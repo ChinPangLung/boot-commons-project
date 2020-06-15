@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 /**
@@ -43,6 +45,7 @@ public class UserController {
     @RequestMapping(value = "create")
     @GlobalTransactional(timeoutMills = 300000)
     public Map<String, Object> create() {
+        Instant startTime = Instant.now();
         log.info("user purchase begin ... xid: " + RootContext.getXID());
         Map<String, Object> result = new HashMap<>(16);
         //写入一个user
@@ -55,17 +58,22 @@ public class UserController {
         user.setRemarks("备注");
         user.setSex(1);
         userService.insert(user);
+        log.info("user 模块总处理时间：" + Duration.between(startTime, Instant.now()));
         List<User> users = userService.findByUserName(user.getName());
-        log.info("调用order-service的account接口=======");
         Account account = new Account();
         account.setBalance(new BigDecimal(1000));
         account.setFreezeAmount(new BigDecimal(1000));
         account.setUserId("100");
         account.setCreateTime(new Date());
         accountService.createAccount(account);
+        Instant orderStart = Instant.now();
         List<Account> accounts = accountService.selectList(new EntityWrapper<>());
+        log.info("order 模块总处理时间：" + Duration.between(orderStart, Instant.now()));
         result.put("user", users);
         result.put("accounts", accounts);
+        Instant endTime = Instant.now();
+        Duration timeElapsed = Duration.between(startTime, endTime);
+        log.info("总处理时间：" + timeElapsed);
         return result;
     }
 

@@ -53,7 +53,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://182.254.183.22:3307/dataStudy?useSSL=false&serverTimezone=UTC
     username: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name:  com.mysql.cj.jdbc.Driver
     druid:
       initial-size: 5
       max-active: 20
@@ -67,6 +67,7 @@ spring:
       test-while-idle: true
       time-between-eviction-runs-millis: 60000
       validation-query: SELECT 1 FROM DUAL
+#      url: /druid/*
 mybatis-plus:
   configuration:
     cache-enabled: true
