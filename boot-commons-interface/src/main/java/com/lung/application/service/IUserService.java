@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author ChinPangLung
@@ -15,6 +15,12 @@ import java.util.List;
  */
 public interface IUserService extends IService<User> {
 
+    /**
+     * 通过用户名查询
+     *
+     * @param name
+     * @return
+     */
     List<User> findByUserName(String name);
 
 }
