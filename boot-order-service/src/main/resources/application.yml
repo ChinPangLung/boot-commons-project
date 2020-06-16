@@ -5,7 +5,8 @@ dubbo:
     name: boot-order-service
     qos-enable: false
   registry:
-    address: zookeeper://182.254.183.22:2181
+#    address: zookeeper://182.254.183.22:2181
+    address: nacos://182.254.183.22:8848
 #  monitor:
 #    protocol: registry
   protocol:
