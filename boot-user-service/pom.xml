@@ -40,7 +40,6 @@
         </dependency>
 
         <!-- Dubbo Spring Boot Starter -->
-        <!-- Dubbo Spring Boot Starter -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
